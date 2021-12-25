@@ -8,5 +8,8 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
       }
       )
    }
-
+   console.error(err)
+   res.status(400).send({
+      errors: [{ message: 'shomething went wrong' }]
+   })
 }
